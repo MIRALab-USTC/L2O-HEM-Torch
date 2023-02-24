@@ -49,6 +49,9 @@ After the environment and dataset are ready, execute the following code to begin
 
 There are two sources of code randomness. One is the randomness of the algorithm inside the solver, which can be fixed by setting the scip_seed parameter. The second is the random module in Python and the random module in Pytorch, which can be uniformly set by setting the seed parameter.
 
+## Datasets
+
+We have released our datasets in https://drive.google.com/drive/folders/1LXLZ8vq3L7v00XH-Tx3U6hiTJ79sCzxY?usp=sharing
 
 ## Citation
 If you find this code useful, please consider citing the following paper.
