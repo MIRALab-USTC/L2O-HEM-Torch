@@ -1,0 +1,87 @@
+{
+    "experiment": {
+        "seed": null,
+        "exp_prefix": "reinforce_rlk_setcover",
+        "base_log_dir": null,
+        "snapshot_mode": "gap_and_last",
+        "snapshot_gap": 1
+    },
+    "env": {
+        "instance_file_path": "/datasets/dataset/data/instances/setcover/train_500r_1000c_0.05d",
+        "scip_time_limit": 300,
+        "single_instance_file": "all",
+        "presolving": true,
+        "separating": true,
+        "conflict": true, 
+        "heuristics": true,
+        "max_rounds_root": 1
+    },
+    "algorithm": {
+        "evaluate_freq": 0,
+        "evaluate_samples": 32,
+        "optimizer_class": "Adam",
+        "actor_net_lr": 1e-4,
+        "critic_net_lr": 1e-4,
+        "reward_scale": 1,
+        "num_epochs": 100,
+        "max_grad_norm": 2.0,
+        "batch_size": 16,
+        "train_decode_type": "stochastic",
+        "evaluate_decode_type": "greedy",
+        "reward_type": "solving_time",
+        "baseline_type": "simple",
+        "critic_beta": 0.9,
+        "train_steps_per_epoch": 4,
+        "lr_decay": true,
+        "lr_decay_step": 5,
+        "lr_decay_rate": 0.96,
+        "normalize": false,
+        "normalize_reward": false
+    },
+    "trainer":{
+        "samples_per_epoch": 8,
+        "n_jobs": 2
+    },
+    "net_share": {
+        "embedding_dim": 13,
+        "hidden_dim": 128,
+        "tanh_exploration": 5,
+        "use_tanh": true
+    },
+    "policy": {
+        "n_glimpses": 1,
+        "beam_size": 1
+    },
+    "value": {
+        "n_process_block_iters": 3
+    },
+    "cutsel_percent_policy":{
+        "use_cutsel_percent_policy": false,
+        "train_freq": 1,
+        "train_highlevel_batch_size": 16,
+        "highlevel_actor_lr": 5e-4
+    },
+    "devices": {
+        "global_device": "cuda:0",
+        "multi_devices": ["2","3"]
+    },
+    "test_kwargs": {
+        "test_instance_path": "/datasets/learning_to_cut/dataset/data/instances/indset/transfer_500_4",
+        "test_model_path": "/datasets/learning_to_cut/data/parallel_reinforce_with_baseline_fix_logprobsall/parallel_reinforce_with_baseline_fix_logprobsall_2022_04_06_23_52_16_0000--s-1840/params.pkl",
+        "n_jobs": 10
+    },
+    "online_test_kwargs": {
+        "test_freq": 1,
+        "test_instance_path": "/datasets/dataset/data/instances/setcover/transfer_500r_1000c_0.05d",
+        "test_n_jobs": 2,
+        "test_env_kwargs": {
+            "scip_time_limit": 300,
+            "single_instance_file": "all",
+            "presolving": true,
+            "separating": true,
+            "conflict": true, 
+            "heuristics": true,
+            "max_rounds_root": 1
+        }
+    }
+}
