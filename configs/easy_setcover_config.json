@@ -12,7 +12,7 @@
         "single_instance_file": "all",
         "presolving": true,
         "separating": true,
-        "conflict": true, 
+        "conflict": true,
         "heuristics": true,
         "max_rounds_root": 1
     },
@@ -38,7 +38,7 @@
         "normalize": false,
         "normalize_reward": false
     },
-    "trainer":{
+    "trainer": {
         "samples_per_epoch": 8,
         "n_jobs": 2
     },
@@ -55,15 +55,20 @@
     "value": {
         "n_process_block_iters": 3
     },
-    "cutsel_percent_policy":{
-        "use_cutsel_percent_policy": false,
-        "train_freq": 1,
+    "cutsel_percent_policy": {
+        "use_cutsel_percent_policy": true,
+        "train_freq": 2,
         "train_highlevel_batch_size": 16,
         "highlevel_actor_lr": 5e-4
     },
     "devices": {
         "global_device": "cuda:0",
-        "multi_devices": ["2","3"]
+        "multi_devices": [
+            "4",
+            "5",
+            "6",
+            "7"
+        ]
     },
     "test_kwargs": {
         "test_instance_path": "/datasets/learning_to_cut/dataset/data/instances/indset/transfer_500_4",
@@ -71,7 +76,7 @@
         "n_jobs": 10
     },
     "online_test_kwargs": {
-        "test_freq": 1,
+        "test_freq": 2,
         "test_instance_path": "/datasets/dataset/data/instances/setcover/transfer_500r_1000c_0.05d",
         "test_n_jobs": 2,
         "test_env_kwargs": {
@@ -79,9 +84,10 @@
             "single_instance_file": "all",
             "presolving": true,
             "separating": true,
-            "conflict": true, 
+            "conflict": true,
             "heuristics": true,
             "max_rounds_root": 1
         }
-    }
+    },
+    "start_epoch": 0
 }
