@@ -21,6 +21,7 @@ Zhihai Wang, Xijun Li, Jie Wang, Yufei Kuang, Mingxuan Yuan, Jia Zeng, Yongdong 
 - Solver dependencies
 
     - SCIP 8.0.0
+    - PySCIPOpt 4.1.0 (DIY), please refer to https://gitee.com/wang-zhihai/py-scipopt_-hem_-iclr2023
 
 
 
